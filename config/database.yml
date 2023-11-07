@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: portfolio_production
-  username: portfolio
-  password: <%= ENV["PORTFOLIO_DATABASE_PASSWORD"] %>
+  host: <%= ENV['POSTGRESQL_HOST'] %>
+  username: <%= ENV['POSTGRESQL_USER_NAME'] %>
+  password: <%= ENV['POSTGRESQL_PASSWORD'] %>
+  database: <%= ENV['POSTGRESQL_DB'] %>
