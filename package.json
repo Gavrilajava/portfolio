@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "postcss-import": "^15.1.0"
+  },
+  "scripts": {
+    "build:css": "tailwindcss --postcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css"
+  }
+}
