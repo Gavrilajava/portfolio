@@ -1,0 +1,99 @@
+@layer components {
+
+  .navlink {
+    @apply z-10 no-underline text-center text-white font-light w-32 rounded-lg h-12 leading-12
+  }
+
+  #nav-mobile .navlink:nth-of-type(1):hover,
+  #nav-mobile .navlink.active:nth-of-type(1),
+  nav .start-1,
+  a:nth-child(1):hover~.nav-animation  {
+    @apply bg-blue
+  }
+  
+  #nav-mobile .navlink:nth-of-type(2):hover,
+  #nav-mobile .navlink.active:nth-of-type(2),
+  nav .start-2,
+  a:nth-child(2):hover~.nav-animation {
+    @apply bg-red
+  }
+  
+  #nav-mobile .navlink:nth-of-type(3):hover,
+  #nav-mobile .navlink.active:nth-of-type(3),
+  nav .start-3,
+  a:nth-child(3):hover~.nav-animation {
+    @apply bg-green
+  }
+
+  #nav-mobile-switch {
+    @apply block relative bg-green w-24 h-24 cursor-pointer circle transition-all duration-500 z-10 -ml-12 -mt-20 sm:hidden
+  }
+
+  #nav-mobile-switch:checked {
+    @apply -rotate-90
+  }
+  
+  #nav-mobile-switch:checked, #nav-mobile-switch:hover, #nav-mobile-switch:focus {
+    @apply bg-none bg-green border-0 outline-0  !important
+  }
+}
+
+#nav-mobile-switch:before {
+  content: '\2630';
+  color: white;
+  font-size: 2rem;
+  left: 3.25rem;
+  position: absolute;
+  top: 2.5rem;
+}
+
+#nav-mobile-switch:after {
+  color: white;
+  content: "\2715";
+  font-size: 1.5rem;
+  position: absolute;
+  top: 3rem;
+  left: 1.25rem;
+}
+
+nav .start-1,
+a:nth-child(1):hover~.nav-animation {
+  left: 2.5rem;
+}
+
+nav .start-2,
+a:nth-child(2):hover~.nav-animation {
+  left: 11.5rem;
+}
+
+nav .start-3,
+a:nth-child(3):hover~.nav-animation {
+  left: 20.5rem;
+}
+
+
+#nav-mobile .navlink:nth-of-type(2) {
+  animation-delay: .1s;
+}
+
+#nav-mobile .navlink:nth-of-type(3) {
+  animation-delay: .2s;
+}
+
+#nav-mobile-switch:checked ~ .page-body {
+  transform: rotate(-30deg);
+}
+
+#nav-mobile-switch:not(:checked) ~ #nav-mobile {
+  display: none;
+}
+
+@media screen(sm) {
+  #nav-mobile-switch:checked ~ .page-body {
+    transform: none;
+  }
+  #nav-mobile  {
+    display: none;
+  }
+}
+

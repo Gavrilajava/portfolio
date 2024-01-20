@@ -2,7 +2,9 @@ FROM ruby:3.1
 
 # install rails dependencies
 # RUN apk add --update build-base bash bash-completion libffi-dev tzdata postgresql-client postgresql-dev nodejs npm yarn
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs postgresql
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg -o /root/yarn-pubkey.gpg && apt-key add /root/yarn-pubkey.gpg
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs yarn postgresql
 
 # create a folder /app in the docker container and go into that folder
 RUN mkdir /app
@@ -10,13 +12,16 @@ WORKDIR /app
 
 # Copy the Gemfile and Gemfile.lock from app root directory into the /app/ folder in the docker container
 COPY Gemfile /app/Gemfile
-# COPY Gemfile.lock /app/Gemfile.lock
+COPY Gemfile.lock /app/Gemfile.lock
 
 # Run bundle install to install gems inside the gemfile
 RUN gem install bundler
-RUN bundle lock --add-platform x86_64-linux
 RUN bundle install
-RUN gem cleanup
+RUN bundle lock --add-platform x86_64-linux
+
 
 # Copy the whole app
 COPY . /app
+
+RUN yarn install
+RUN bundle exec rake RAILS_ENV=production assets:precompile

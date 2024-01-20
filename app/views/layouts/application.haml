@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Portfolio
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}
+    = csrf_meta_tags
+    = csp_meta_tag
+    %link{rel: :preconnect, href: 'https://fonts.googleapis.com'}
+    %link{rel: :preconnect, href: 'https://fonts.gstatic.com', crossorigin: true}
+    %link{rel: :stylesheet, href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;800&display=swap'}
+
+    = stylesheet_link_tag "tailwind"
+  %body.bg-grey.sm:bg-white
+    =render 'layouts/navbar'
+    .container.mx-auto.pt-6.page-body.bg-white.h-screen.z-10.transition-all.origin-top-left
+      = yield
+    #nav-mobile{class: 'absolute top-1/4 pt-40 z-0'}
+      = yield :mobile_nav
+    

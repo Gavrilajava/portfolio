@@ -1,0 +1,23 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "./navbar.tailwind.css";
+@import "tailwindcss/utilities";
+
+
+
+@layer components {
+
+  .leading-12 {
+    line-height: 3rem;
+  }
+
+  .circle {
+    border-radius: 50%;
+  }
+
+  .border-t-3 {
+    border-top-width: 3px
+  }
+}
+
+
