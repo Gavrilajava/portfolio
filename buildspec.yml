@@ -11,7 +11,7 @@ phases:
     commands:
       - echo Logging in to Amazon ECR....
       - aws --version
-      - $(aws ecr get-login-password --region $CI_REGION)
+      - aws ecr get-login-password --region $CI_REGION | docker login --username AWS --password-stdin $REPO_URL
 
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - echo "The commit hash is $COMMIT_HASH"
