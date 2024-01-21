@@ -9,11 +9,17 @@ module.exports = {
   ],
   theme: {
     colors: {
+      'body': '#1d1d1d',
+      'grey': '#1f2831',
       'white': '#ffffff',
-      'blue': '#3498db',
-      'green': '#1abc9c',
-      'red': '#e74c3c',
-      'grey': '#1f2937'
+      'green': '#4ac3a7',
+      'blue': '#4E8EC7',
+      'purple': '#B577B0',
+      'yellow': '#D6D6A2',
+      'brown': '#C5836E',
+      'red': '#C3313D',
+      'dark-green': '#608E4D',
+      'light-blue': '#8AC7E8'
 
     },
     extend: {
