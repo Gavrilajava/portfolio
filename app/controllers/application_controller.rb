@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     @navbar_links = {
       home: root_path,
       groceries: groceries_path,
-      help: help_path,
+      contacts: contacts_path,
     }
   end
 end

@@ -23,9 +23,6 @@ default: &default
 
 development:
   <<: *default
-  host: db
-  username: postgres
-  password: password
   database: portfolio_development
 
 

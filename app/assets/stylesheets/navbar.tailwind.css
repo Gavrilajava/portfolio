@@ -8,25 +8,25 @@
   #nav-mobile .navlink.active:nth-of-type(1),
   nav .start-1,
   a:nth-child(1):hover~.nav-animation  {
-    @apply bg-blue
+    @apply bg-green
   }
   
   #nav-mobile .navlink:nth-of-type(2):hover,
   #nav-mobile .navlink.active:nth-of-type(2),
   nav .start-2,
   a:nth-child(2):hover~.nav-animation {
-    @apply bg-red
+    @apply bg-purple
   }
   
   #nav-mobile .navlink:nth-of-type(3):hover,
   #nav-mobile .navlink.active:nth-of-type(3),
   nav .start-3,
   a:nth-child(3):hover~.nav-animation {
-    @apply bg-green
+    @apply bg-blue
   }
 
   #nav-mobile-switch {
-    @apply block relative bg-green w-24 h-24 cursor-pointer circle transition-all duration-500 z-10 -ml-12 -mt-20 sm:hidden
+    @apply block sticky bg-brown w-24 h-24 cursor-pointer circle transition-all duration-500 z-10 -ml-12 -mt-24 sm:hidden 
   }
 
   #nav-mobile-switch:checked {
@@ -34,7 +34,7 @@
   }
   
   #nav-mobile-switch:checked, #nav-mobile-switch:hover, #nav-mobile-switch:focus {
-    @apply bg-none bg-green border-0 outline-0  !important
+    @apply bg-none bg-brown !important
   }
 }
 
