@@ -1,7 +1,10 @@
 FROM ruby:3.1
 
+
+ARG RAILS_ENV
+ARG MASTER_KEY
+
 # install rails dependencies
-# RUN apk add --update build-base bash bash-completion libffi-dev tzdata postgresql-client postgresql-dev nodejs npm yarn
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg -o /root/yarn-pubkey.gpg && apt-key add /root/yarn-pubkey.gpg
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs yarn postgresql
@@ -19,9 +22,14 @@ RUN gem install bundler
 RUN bundle install
 RUN bundle lock --add-platform x86_64-linux
 
-
 # Copy the whole app
 COPY . /app
 
+# Setting up the credentials
+RUN echo $MASTER_KEY > config/credentials/$RAILS_ENV.key
+
+# install node packages
 RUN yarn install
-RUN bundle exec rake RAILS_ENV=production assets:precompile
+
+# Precompile assets
+RUN bundle exec rake assets:precompile RAILS_ENV=$RAILS_ENV
