@@ -20,9 +20,14 @@ Rails.application.configure do
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
 
-  # Disable serving static files from the `/public` folder by default since
-  # Apache or NGINX already handles this.
+  # We enable public_file_server so it can provide static assets 
+  # to Cloudfront when somebody asks for it first time. 
   config.public_file_server.enabled = true
+  config.public_file_server.headers = {
+    'Cache-Control' => 'public, max-age=31536000'
+  }
+  # assets are available under different domain
+  config.action_controller.asset_host = Rails.application.credentials.cdn_host
 
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
