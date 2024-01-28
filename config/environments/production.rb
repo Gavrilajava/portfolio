@@ -27,8 +27,8 @@ Rails.application.configure do
     'Cache-Control' => 'public, max-age=31536000'
   }
   # assets are available under different domain
-  config.action_controller.asset_host = Rails.application.credentials.cdn_host
-
+  config.action_controller.asset_host = 'https://cdn.gavrilchik.net'
+  
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
 
