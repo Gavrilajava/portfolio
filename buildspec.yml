@@ -22,6 +22,9 @@ phases:
       - mkdir shared/pids
       - mkdir shared/sockets
 
+      - echo "Adding Credentials"
+      - echo $MASTER_KEY > config/credentials/production.key
+
   build: 
     commands: 
       - echo Build started on `date`
