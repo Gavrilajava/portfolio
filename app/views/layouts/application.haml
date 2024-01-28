@@ -6,8 +6,6 @@
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}
     = csrf_meta_tags
     = csp_meta_tag
-    -if Rails.application.credentials.asset_host
-      %link{rel: :preconnect, href: Rails.application.credentials.asset_host}
     %link{rel: :preconnect, href: 'https://fonts.googleapis.com'}
     %link{rel: :preconnect, href: 'https://fonts.gstatic.com', crossorigin: true}
     %link{rel: :stylesheet, href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;800&display=swap'}

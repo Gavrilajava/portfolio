@@ -26,7 +26,7 @@ phases:
     commands: 
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build --build-arg RAILS_ENV=$RAILS_ENV --build-arg MASTER_KEY=$MASTER_KEY -t $REPO_URL:latest .
+      - docker build -t $REPO_URL:latest .
       - docker tag $REPO_URL:latest $REPO_URL:$IMAGE_TAG
   post_build:
     commands:
