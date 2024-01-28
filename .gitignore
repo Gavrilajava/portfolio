@@ -32,7 +32,3 @@ docker-cheatsheet
 !/app/assets/builds/.keep
 
 **/.DS_Store
-
-docker/local_prod
-
-/config/credentials/production.key
