@@ -1,0 +1,27 @@
+version: '3'
+services:
+  db:
+    image: 'postgres:latest'
+    volumes:
+      - ../../tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: password
+  web:
+    build: 
+      context: ../../
+      args: 
+        - RAILS_ENV=production
+        - MASTER_KEY=7b34eed60364227b6dfb41bc21c7bef9
+    command: bundle exec puma -C config/docker_puma.rb -p 8080
+    volumes:
+      - ../../:/myapp
+    environment:
+      RAILS_ENV: production
+      POSTGRESQL_HOST: db
+      POSTGRESQL_USER_NAME: postgres
+      POSTGRESQL_PASSWORD: password
+      POSTGRESQL_DB: portfolio_development
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
