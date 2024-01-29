@@ -33,7 +33,6 @@ docker-cheatsheet
 
 **/.DS_Store
 
-
 docker/local_prod
 
 /config/credentials/production.key
