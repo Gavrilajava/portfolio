@@ -23,6 +23,10 @@ Rails.application.configure do
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = true
+  config.public_file_server.headers = {
+    'Cache-Control' => 'public, max-age=15552000',
+    'Expires' => 1.year.from_now.to_formatted_s(:rfc822)
+  }
 
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
@@ -32,6 +36,8 @@ Rails.application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   config.asset_host = "https://cdn.gavrilchik.net"
+
+
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for Apache
