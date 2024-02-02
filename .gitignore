@@ -35,4 +35,4 @@ docker-cheatsheet
 
 docker/local_prod
 
-/config/credentials/production.key
+/config/credentials/*.key
