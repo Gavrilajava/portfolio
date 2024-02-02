@@ -7,7 +7,7 @@ ARG ENVIRONMENT_KEY
 # install rails dependencies
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg -o /root/yarn-pubkey.gpg && apt-key add /root/yarn-pubkey.gpg
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs yarn postgresql
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs yarn postgresql nano
 
 # create a folder /app in the docker container and go into that folder
 RUN mkdir /app
