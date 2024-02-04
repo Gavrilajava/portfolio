@@ -1,0 +1,17 @@
+
+.flex.flex-col.items-center.justify-center.px-6.py-8.mx-auto.lg:py-0
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put, class: 'bordered sm:max-w-md'}) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    %h1.text-3xl.text-green Edit your profile
+    %p.text-light-blue You can edit or even delete your account from here
+
+    = render "user_fields", f: f
+
+    = f.submit "Update", class: 'button bg-purple w-full'
+
+    %h3.text-2xl.text-green.mt-5 Cancel my account
+    %p.text-light-blue
+      Unhappy? We can completely wipe your data. It may not be ideal from a marketing perspective, but it's fair.
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :delete}) do |f|
+      =f.submit 'Delete my account', class: 'button bg-red w-full'
+

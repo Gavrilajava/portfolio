@@ -1,11 +1,10 @@
 class ApplicationController < ActionController::Base
-  before_action :set_navbar_links
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def set_navbar_links
-    @navbar_links = {
-      home: root_path,
-      groceries: groceries_path,
-      contacts: contacts_path,
-    }
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up,
+                                      keys: %i[name email password password_confirmation acknowledgement])
   end
 end

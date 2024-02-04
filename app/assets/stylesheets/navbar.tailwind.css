@@ -1,7 +1,16 @@
 @layer components {
 
+  nav.main{
+    @apply bg-body sm:bg-grey px-2 sm:px-20 relative flex justify-center sm:justify-start !important
+  }
+
   .navlink {
     @apply z-10 no-underline text-center text-white font-light w-32 rounded-lg h-12 leading-12
+  
+  }
+
+  .nav-animation {
+    @apply absolute top-0 h-full w-32 z-0 rounded-lg transition-all duration-500
   }
 
   #nav-mobile .navlink:nth-of-type(1):hover,
@@ -58,17 +67,17 @@
 
 nav .start-1,
 a:nth-child(1):hover~.nav-animation {
-  left: 2.5rem;
+  left: 10rem;
 }
 
 nav .start-2,
 a:nth-child(2):hover~.nav-animation {
-  left: 11.5rem;
+  left: 19rem;
 }
 
 nav .start-3,
 a:nth-child(3):hover~.nav-animation {
-  left: 20.5rem;
+  left: 28rem;
 }
 
 

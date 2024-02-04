@@ -1,0 +1,9 @@
+- if resource.errors.any?
+  %h2.text-red
+    = I18n.t("errors.messages.not_saved",                 |
+      count: resource.errors.count,                       |
+      resource: resource.class.model_name.human.downcase) |
+  %ul.text-sm
+    - resource.errors.messages.each do |key, messages|
+      %li
+        .text-red= "#{key.to_s.titleize}: #{messages.join("\n")}"

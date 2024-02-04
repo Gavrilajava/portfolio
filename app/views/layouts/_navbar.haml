@@ -1,17 +1,17 @@
-%nav.bg-body.sm:bg-grey
-  .mx-auto.max-w-7xl.px-2.sm:px-6.lg:px-8
-    .relative.flex.h-13.items-center.justify-between
-      .flex.flex-1.items-center.justify-center.sm:items-stretch.sm:justify-start
-        .flex.flex-shrink-0.items-center
-          %img.h-8.w-auto.my-2.sm:my-0{src: asset_path('logo.png'), alt: "George Gavrilchik personal website logo"}
-        .hidden.sm:ml-6.sm:block
-          .flex.space-x-4
-            -current_index = @navbar_links.keys.find_index(controller_name.to_sym)
-            -@navbar_links.each_with_index do |(title, href), index|
-              =link_to title.to_s.upcase, href, class: 'navlink inline-block h-100'
-              -content_for :mobile_nav do
-                =link_to title.to_s.upcase, href, class: "navlink block animate-slide -translate-x-full #{index == current_index ? 'active' : ''}"
-            .nav-animation.absolute.top-0.h-full.w-32.z-0.rounded-lg.transition-all.duration-500{class: "start-#{current_index + 1}"}
+%nav.main
+  .flex.items-center.sm:ms-10
+    %img.h-8.w-auto.my-2{src: asset_path('logo.png'), alt: "George Gavrilchik personal website logo"}
+  .hidden.sm:flex.ml-6.space-x-4
+    -current_index = navbar_links.keys.find_index(controller_name.to_sym) || 0
+    -navbar_links.each_with_index do |(title, href), index|
+      =link_to title.to_s.upcase, href, class: 'navlink inline-block h-100'
+      -content_for :mobile_nav do
+        =link_to title.to_s.upcase, href, class: "navlink block animate-slide -translate-x-full #{index == current_index ? 'active' : ''}"
+    .nav-animation{class: "start-#{current_index + 1}"}
+  -if current_user
+    .flex.ml-auto
+      =form_for current_user, url: destroy_user_session_path, method: :delete do |f|
+        =f.submit I18n.t(:sign_out, scope: [:devise, :sessions])
 
 %input#nav-mobile-switch{type: :checkbox}
 

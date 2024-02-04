@@ -1,0 +1,18 @@
+.flex.flex-col.items-center.justify-center.px-6.py-8.mx-auto.md:h-screen.lg:py-0
+  = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'bordered sm:max-w-md'}) do |f|
+    %h1.text-3xl.text-green Welcome back!
+    %p.text-light-blue Speak friend and enter.
+    %p.text-light-blue Hooray, we now have authentication!
+
+    = f.label :email, class: 'label block mb-2 mt-6'
+    = f.email_field :email, autofocus: true, autocomplete: "email", class: 'input block w-full'
+
+    = f.label :password, class: 'label block mb-2 mt-6'
+    = f.password_field :password, autocomplete: "current-password", class: 'input block w-full'
+
+    .flex.items-start.mt-6
+      = f.check_box :remember_me, class: 'checkbox'
+      = f.label :remember_me, class: 'label ml-3'
+
+    = f.submit "Log in", class: 'button bg-purple w-full'
+    = render "devise/shared/links"
