@@ -89,6 +89,30 @@ a:nth-child(3):hover~.nav-animation {
   animation-delay: .2s;
 }
 
+#user-menu-button:not(:focus-within) ~ #navbar-user {
+  visibility: hidden;
+}
+
+#navbar-user:hover, #user-menu-button:hover ~ #navbar-user {
+  visibility: visible !important;
+}
+
+#navbar-user {
+  
+  transition:   0.5s height cubic-bezier(.73,.32,.34,1.5);
+  transition:  0.5s padding cubic-bezier(.73,.32,.34,1.5);
+  transition:   0.5s margin cubic-bezier(.73,.32,.34,1.5);
+  transition:   0.5s 0.2s color;
+  transition:   0.2s background-color;
+}
+
+
+
+
+
+
+
+
 #nav-mobile-switch:checked ~ .page-body {
   transform: rotate(-30deg);
 }
