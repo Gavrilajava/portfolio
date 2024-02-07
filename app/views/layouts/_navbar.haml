@@ -9,14 +9,12 @@
         =link_to title.to_s.upcase, href, class: "navlink block animate-slide -translate-x-full #{index == current_index ? 'active' : ''}"
     .nav-animation{class: "start-#{current_index + 1}"}
   -if current_user
-    .absolute.top-1.right-5
+    .absolute.top-2.right-5
       %label.sr-only{for: 'user-menu-button'}
         Open user menu
-      #user-menu-button.flex.items-center.justify-center.text-3xl.font-thin.bg-purple.rounded-full.ml-auto.sm:mx-auto.focus:ring-4.focus:ring-blue.dark.w-10.h-10.rounded-full{tabindex: 0}
+      #user-menu-button.flex.items-center.justify-center.text-2xl.font-thin.bg-purple.rounded-full.ml-auto.sm:mx-auto.focus:ring-4.focus:ring-blue.dark.w-9.h-9.rounded-full{tabindex: 0}
         =current_user.name.first
-
-
-      #navbar-user.flex.flex-col.items-center.mt-2.text-sm.font-extralight.border.border-dark-grey.rounded-lg.bg-grey
+      #navbar-user.items-center.mt-2.text-sm.font-light.border.border-dark-grey.rounded-lg.bg-grey
         .px-4.py-3.text-green
           %span.block=current_user.name
           %span.block=current_user.email

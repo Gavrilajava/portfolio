@@ -95,16 +95,48 @@ a:nth-child(3):hover~.nav-animation {
 
 #navbar-user:hover, #user-menu-button:hover ~ #navbar-user {
   visibility: visible !important;
+
 }
 
-#navbar-user {
-  
-  transition:   0.5s height cubic-bezier(.73,.32,.34,1.5);
-  transition:  0.5s padding cubic-bezier(.73,.32,.34,1.5);
-  transition:   0.5s margin cubic-bezier(.73,.32,.34,1.5);
-  transition:   0.5s 0.2s color;
-  transition:   0.2s background-color;
+@media screen(sm) {
+  #user-menu-button:hover ~ #navbar-user {
+    animation: growDown 300ms ease-in-out forwards;
+    transform-origin: top center
+  }
+
+  @keyframes growDown {
+    0% {
+        transform: scaleY(0)
+    }
+    80% {
+        transform: scaleY(1.1)
+    }
+    100% {
+        transform: scaleY(1)
+    }
+  }
 }
+
+@media (max-width: 640px){
+  #user-menu-button:hover ~ #navbar-user {
+    animation: growLeft 300ms ease-in-out forwards;
+    transform-origin: top right
+  }
+  
+  @keyframes growLeft {
+    0% {
+        transform: scaleX(0)
+    }
+    80% {
+        transform: scaleX(1.1)
+    }
+    100% {
+        transform: scaleX(1)
+    }
+  }
+  
+}
+
 
 
 
