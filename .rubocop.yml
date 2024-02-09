@@ -1,0 +1,18 @@
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/Metrics/MethodLength:
+  Exclude:
+    - "db/migrate/*"
+
+Metrics/BlockLength:
+  Exclude:
+    - "config/**/*"
+    - "spec/**/*"
+
+AllCops:
+  Exclude:
+    - "bin/*"
