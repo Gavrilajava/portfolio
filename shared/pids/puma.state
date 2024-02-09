@@ -1,0 +1,5 @@
+---
+pid: 33370
+control_url: unix:///var/folders/n2/17rt1xvx5yx1bch5xv7_1th40000gn/T/puma-status-1707508503684-33370
+control_auth_token: 552e4ff7f499e3e36b2a6f52c9cacfc0
+running_from: "/Users/george/dev/portfolio"
