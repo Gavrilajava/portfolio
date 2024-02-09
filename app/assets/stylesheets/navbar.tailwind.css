@@ -1,3 +1,4 @@
+
 @layer components {
 
   nav.main{
@@ -45,6 +46,11 @@
   #nav-mobile-switch:checked, #nav-mobile-switch:hover, #nav-mobile-switch:focus {
     @apply bg-none bg-brown !important
   }
+
+  /* #user-menu-button:hover ~ #navbar-user {
+    @apply ainimate-slide origin-top-right md:animate-slide md:origin-top-center
+  } */
+  
 }
 
 #nav-mobile-switch:before {
@@ -95,10 +101,11 @@ a:nth-child(3):hover~.nav-animation {
 
 #navbar-user:hover, #user-menu-button:hover ~ #navbar-user {
   visibility: visible !important;
-
 }
 
-@media screen(sm) {
+
+
+/* @media screen(sm) {
   #user-menu-button:hover ~ #navbar-user {
     animation: growDown 300ms ease-in-out forwards;
     transform-origin: top center
@@ -135,7 +142,7 @@ a:nth-child(3):hover~.nav-animation {
     }
   }
   
-}
+} */
 
 
 
