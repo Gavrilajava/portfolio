@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, only: %i[sessions passwords registrations], controllers: { sessions: 'sessions' }
+  devise_for :users, only: %i[sessions passwords registrations]
 
   get '/health_check', to: 'health_check#show'
   get '/health', to: 'health_check#show'

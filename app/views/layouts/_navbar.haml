@@ -8,22 +8,24 @@
       -content_for :mobile_nav do
         =link_to title.to_s.upcase, href, class: "navlink block animate-slide -translate-x-full #{index == current_index ? 'active' : ''}"
     .nav-animation{class: "start-#{current_index + 1}"}
-  -if current_user
-    .absolute.top-2.right-5
-      %label.sr-only{for: 'user-menu-button'}
-        Open user menu
-      #user-menu-button.flex.items-center.justify-center.text-2xl.font-thin.bg-purple.rounded-full.ml-auto.sm:mx-auto.focus:ring-4.focus:ring-blue.dark.w-9.h-9.rounded-full{tabindex: 0}
-        =current_user.name.first
-      #navbar-user.items-center.mt-2.text-sm.font-light.border.border-dark-grey.rounded-lg.bg-grey
-        .px-4.py-3.text-green
-          %span.block=current_user.name
-          %span.block=current_user.email
-        %ul.block.w-full.font-medium.py-4.px-0.mt-2.mb-0.border-t.border-dark-grey.text-light-blue
-          %li.hover:bg-dark-grey
-            =link_to 'Manage profile', edit_user_registration_path, class: 'block py-2 px-3 hover:text-blue', tabindex: 0
-          %li.hover:bg-dark-grey
-            =form_for current_user, url: destroy_user_session_path, method: :delete do |f|
-              =f.submit 'Log Out', class: 'block py-2 px-3 hover:text-blue', tabindex: 0
+    .absolute.top-2.right-5.text-sm.font-light
+      -if current_user.blank?
+        =link_to 'Log In', new_user_session_path, class: 'block py-2 px-3 hover:text-blue', tabindex: 0
+      -else
+        %label.sr-only{for: 'user-menu-button'}
+          Open user menu
+        #user-menu-button.flex.items-center.justify-center.text-2xl.font-thin.bg-purple.rounded-full.ml-auto.sm:mx-auto.focus:ring-4.focus:ring-blue.dark.w-9.h-9.rounded-full{tabindex: 0}
+          =current_user.name.first
+        #navbar-user.items-center.mt-2.border.border-dark-grey.rounded-lg.bg-grey
+          .px-4.py-3.text-green
+            %span.block=current_user.name
+            %span.block=current_user.email
+          %ul.block.w-full.font-medium.py-4.px-0.mt-2.mb-0.border-t.border-dark-grey.text-light-blue
+            %li.hover:bg-dark-grey
+              =link_to 'Manage profile', edit_user_registration_path, class: 'block py-2 px-3 hover:text-blue', tabindex: 0
+            %li.hover:bg-dark-grey
+              =form_for current_user, url: destroy_user_session_path, method: :delete do |f|
+                =f.submit 'Log Out', class: 'block py-2 px-3 hover:text-blue', tabindex: 0
 
 %label.sr-only{for: 'nav-mobile-switch'}
   Toggle navigation menu

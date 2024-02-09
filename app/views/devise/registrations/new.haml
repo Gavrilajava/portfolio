@@ -1,16 +1,16 @@
 .flex.flex-col.items-center.justify-center.px-6.py-8.mx-auto.lg:py-0
   = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'bordered sm:max-w-md'}) do |f|
 
-    %h1.text-3xl.text-green Come join us!
-    %p.text-light-blue I don't know yet why it's necessary, but there will be more cool features for registered users soon.
+    %h1.text-3xl.text-green=I18n.t(:header, scope: [:devise, :registrations, :new])
+    %p.text-light-blue=I18n.t(:promt, scope: [:devise, :registrations, :new])
 
     = render "devise/shared/error_messages", resource: resource
 
-    = render "user_fields", f: f
+    = render "devise/shared/user_fields", f: f
 
     .flex.items-start.mt-6
       = f.check_box :acknowledgement, value: false, class: 'checkbox'
       = f.label :acknowledgement, I18n.t(:acknowledgement, scope: [:devise, :registrations]), class: 'label ml-3'
 
-    = f.submit "Sign up", class: 'button bg-purple w-full'
+    = f.submit I18n.t(:header, scope: [:devise, :registrations, :new]), class: 'button bg-purple w-full'
     = render "devise/shared/links"

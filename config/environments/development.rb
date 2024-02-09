@@ -33,7 +33,10 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # Action mailer settings
+  config.action_mailer.default_url_options = Rails.application.credentials.action_mailer.default_url_options
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = Rails.application.credentials.action_mailer.smtp_settings
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
