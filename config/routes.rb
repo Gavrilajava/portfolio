@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  get 'contacts', to: 'contacts#index'
+  get 'contacts', to: 'contact_requests#new'
+  post 'contact_requests', to: 'contact_requests#create'
 
   get 'groceries', to: 'groceries#index'
 end

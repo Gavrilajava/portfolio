@@ -2,7 +2,7 @@
   .flex.items-center.sm:ms-10
     %img.h-8.w-auto.my-2{src: asset_path('logo.png'), alt: "George Gavrilchik personal website logo"}
   .hidden.sm:flex.ml-6.space-x-4
-    -current_index = navbar_links.keys.find_index(controller_name.to_sym) || 0
+    -current_index = navbar_links.keys.find_index(@active_nav_link) || 0
     -navbar_links.each_with_index do |(title, href), index|
       =link_to title.to_s.upcase, href, class: 'navlink inline-block h-100'
       -content_for :mobile_nav do
