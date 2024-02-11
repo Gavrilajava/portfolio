@@ -14,6 +14,7 @@
   %body.bg-grey.sm:bg-body.text-white
     =render 'layouts/navbar'
     .container.mx-auto.pt-6.page-body.bg-body.h-full.min-h-screen.z-10.transition-all.origin-top-left
+      =render 'layouts/flashes'
       = yield
     #nav-mobile{class: 'absolute top-1/4 pt-40 z-0'}
       = yield :mobile_nav

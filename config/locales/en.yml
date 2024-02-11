@@ -3,7 +3,7 @@ en:
     header: Send me a message!
     promt: If you have something to tell, here is a form for it!
     submit: Send
-    notice: Your message has been sent, I will read it as soon as I can, I promice.
+    notice: Your message has been sent, I will read it as soon as I can and respond if needed.
     message:
       placeholder: Type your message here...
     email:

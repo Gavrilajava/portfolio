@@ -6,7 +6,7 @@ class ContactRequestsController < ApplicationController
   def create
     @contact_request = ContactRequest.new(strong_params)
     if @contact_request.save
-      flash[:notice] = 'Bam!'
+      flash[:notice] = I18n.t(:notice, scope: [:contact_requests])
       redirect_to root_path
     else
       flash[:error] = @contact_request.errors.full_messages.join(', ')

@@ -4,9 +4,6 @@
     %h1.text-3xl.text-green=I18n.t(:header, scope: [:devise, :sessions, :new])
     %p.text-light-blue=I18n.t(:promt, scope: [:devise, :sessions, :new])
 
-    -if flash[:notice]
-      %p.text-blue=flash[:notice]
-
     = f.label :email, class: 'label block mb-2 mt-6'
     = f.email_field :email, autofocus: true, autocomplete: "email", class: 'input block w-full'
 

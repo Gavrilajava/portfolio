@@ -27,6 +27,9 @@ module.exports = {
       fontFamily: {
         sans: ['Poppins', ...defaultTheme.fontFamily.sans],
       },
+      backgroundImage: {
+        close: "url('icons/close.svg')"
+      },
       keyframes: {
         slide: {
           '0%': { transform: 'translateX(-100%)' },
