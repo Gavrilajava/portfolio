@@ -8,7 +8,7 @@
       -content_for :mobile_nav do
         =link_to title.to_s.upcase, href, class: "navlink block animate-slide -translate-x-full #{index == current_index ? 'active' : ''}"
     .nav-animation{class: "start-#{current_index + 1}"}
-  .absolute.top-2.right-5.text-sm.font-light
+  #user-menu-container.absolute.top-2.right-5.text-sm.font-light
     -if current_user.blank?
       =link_to 'Log In', new_user_session_path, class: 'block py-2 px-3 hover:text-blue', tabindex: 0
     -else
@@ -16,7 +16,7 @@
         Open user menu
       #user-menu-button{tabindex: 0}
         =current_user.name.first
-      #navbar-user
+      #user-menu
         .px-4.py-3.text-green
           %span.block=current_user.name
           %span.block=current_user.email
