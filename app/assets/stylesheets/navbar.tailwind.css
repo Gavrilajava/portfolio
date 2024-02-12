@@ -50,12 +50,12 @@
   }
 
   #user-menu-button:hover ~ #navbar-user {
-    @apply animate-left origin-right
+    @apply animate-grow-left origin-right
   }
 
   @media screen(sm) {
     #user-menu-button:hover ~ #navbar-user {
-      @apply animate-down origin-top !important
+      @apply animate-grow-down origin-top !important
     }
   }
 
@@ -109,7 +109,7 @@ a:nth-child(3):hover~.nav-animation {
   visibility: hidden;
 }
 
-#navbar-user:hover, #user-menu-button:hover ~ #navbar-user, #user-menu-button:focus ~ #navbar-user  {
+#navbar-user:hover, #user-menu-button:hover ~ #navbar-user, #user-menu-button:focus-within ~ #navbar-user  {
   visibility: visible !important;
 }
 

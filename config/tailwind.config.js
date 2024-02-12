@@ -35,21 +35,27 @@ module.exports = {
           '0%': { transform: 'translateX(-100%)' },
           '100%': { transform: 'translateX(0%)' },
         },
-        left: {
+        'grow-left': {
           '0%': { transform: 'scaleX(0)' },
           '80%': { transform: 'scaleX(1.1)' },
           '100%': { transform: 'scaleX(1)' },
         },
-        down: {
+        'grow-down': {
           '0%': { transform: 'scaleY(0)' },
           '80%': { transform: 'scaleY(1.1)' },
           '100%': { transform: 'scaleY(1)' },
+        },
+        'shrink-up': {
+          '0%': { transform: 'scaleY(1)' },
+          '80%': { transform: 'scaleY(0.9)' },
+          '100%': { transform: 'scaleY(0)' },
         }
       },
       animation: {
         slide: 'slide 0.3s forwards',
-        left: 'left 300ms ease-in-out forwards',
-        down: 'down 300ms ease-in-out forwards',
+        'grow-left': 'grow-left 300ms ease-in-out forwards',
+        'grow-down': 'grow-down 300ms ease-in-out forwards',
+        'shrink-up': 'shrink-up 300ms ease-in-out forwards',
       }
 
     },

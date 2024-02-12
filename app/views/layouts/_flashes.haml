@@ -1,5 +1,5 @@
 #flashes.flex.flex-col.items-center.justify-center.px-6.mb-8.mx-auto
   -if flash[:notice]
-    .text-yellow.relative.w-full.rounded-lg.border.p-6.sm:p-8.bg-grey.border-dark-grey
+    .text-yellow.relative.w-full.rounded-lg.border.p-6.sm:p-8.bg-grey.border-dark-grey.animate-grow-down.origin-top
       =flash[:notice]
       %button.close{onclick: 'this.parentNode.remove()'}
