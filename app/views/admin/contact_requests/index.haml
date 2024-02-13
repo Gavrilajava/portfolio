@@ -1,0 +1,23 @@
+.flex.flex-col.items-center.justify-center.px-6.py-8.mx-auto.lg:py-0
+
+  %h1.text-4xl.mt-5.text-green All Contact Requests
+
+  .flex.flex-row.justify-items-center
+    -if @offset > 0
+      =link_to 'Previous', @offset > @limit ? admin_contact_requests_offset_path(@offset - @limit) : admin_contacts_requests_path, class: 'button flex bg-blue'
+    -if @count > @offset + @limit
+      =link_to 'Next', admin_contact_requests_offset_path(@offset + @limit), class: 'button flex bg-brown ms-8'
+
+  %table.table-auto.text-sm.text-left.text-light-blue.bg-grey.mt-8
+    %thead.text-purple.font-light.uppercase.bg-dark-grey
+      %th.px-6.py-3 #
+      %th.px-6.py-3 Email
+      %th.px-6.py-3 Status
+      %th.px-6.py-3 Created At
+    %tbody
+      -@objects.each do |request|
+        %tr.border-b.border-dark-grey
+          %td.px-6.py-3=request.id
+          %td.px-6.py-3=link_to request.email, edit_admin_contact_request_path(request)
+          %td.px-6.py-3=request.status.titleize
+          %td.px-6.py-3=request.created_at.to_s

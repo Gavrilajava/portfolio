@@ -8,9 +8,11 @@
 
     = render "devise/shared/user_fields", f: f
 
+    = render "devise/shared/password_fields", f: f
+
     .flex.items-start.mt-6
       = f.check_box :acknowledgement, value: false, class: 'checkbox'
       = f.label :acknowledgement, I18n.t(:acknowledgement, scope: [:devise, :registrations]), class: 'label ml-3'
 
-    = f.submit I18n.t(:header, scope: [:devise, :registrations, :new]), class: 'button bg-purple w-full'
+    = f.submit I18n.t(:submit, scope: [:devise, :registrations, :new]), class: 'button bg-purple w-full'
     = render "devise/shared/links"

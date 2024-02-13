@@ -1,0 +1,15 @@
+.flex.flex-col.items-center.justify-center.px-6.py-8.mx-auto.lg:py-0
+  = form_for @contact_request, html: {class: 'bordered max-w-xl md:min-w-full'} do |f|
+
+    %h1.text-3xl.text-green=I18n.t(:header, scope: [:contact_requests])
+    %p.text-light-blue=I18n.t(:promt, scope: [:contact_requests])
+    -if flash[:error]
+      %p.text-red=flash[:error]
+
+    = f.label :email, class: 'label block mb-2 mt-6'
+    = f.email_field :email, autofocus: true, required: true, autocomplete: 'email', class: 'input block w-full', placeholder: I18n.t(:placeholder, scope: [:contact_requests, :email])
+
+    = f.label :message, class: 'label block mb-2 mt-6'
+    = f.text_area :message, class: 'input block w-full min-h-40 md:min-h-80', placeholder: I18n.t(:placeholder, scope: [:contact_requests, :message])
+
+    = f.submit I18n.t(:submit, scope: [:contact_requests]), class: 'button bg-purple w-full'

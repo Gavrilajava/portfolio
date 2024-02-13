@@ -8,11 +8,23 @@
 
     = render "devise/shared/user_fields", f: f
 
+    = f.label :password, I18n.t(:label, scope: [:devise, :registrations, :edit, :new_password]), class: 'label block mb-2 mt-6'
+    = f.password_field :password, autocomplete: "new-password", class: 'input block w-full'
+    %span.text-dark-green.text-sm=I18n.t(:promt, scope: [:devise, :registrations, :edit, :new_password])
+
+    = f.label :password_confirmation, I18n.t(:new_password_confirmation, scope: [:devise, :registrations, :edit]), class: 'label block mb-2 mt-6'
+    = f.password_field :password_confirmation, autocomplete: "new-password", class: 'input block w-full'
+
+    = f.label :current_password, class: 'label block mb-2 mt-6'
+    = f.password_field :current_password, autocomplete: "current-password", class: 'input block w-full'
+    %span.text-dark-green.text-sm=I18n.t(:current_password_promt, scope: [:devise, :registrations, :edit])
+
     = f.submit I18n.t(:submit, scope: [:devise, :registrations, :edit]), class: 'button bg-purple w-full'
 
-    %h3.text-2xl.text-green.mt-5=I18n.t(:header, scope: [:devise, :registrations, :delete])
-    %p.text-light-blue=I18n.t(:promt, scope: [:devise, :registrations, :delete])
 
-    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :delete}) do |f|
-      =f.submit I18n.t(:submit, scope: [:devise, :registrations, :delete]), class: 'button bg-red w-full'
+
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :delete, class: 'bordered sm:max-w-md mt-8'}) do |f|
+    %h1.text-3xl.text-green.mt-3=I18n.t(:header, scope: [:devise, :registrations, :delete])
+    %p.text-light-blue=I18n.t(:promt, scope: [:devise, :registrations, :delete])
+    =f.submit I18n.t(:submit, scope: [:devise, :registrations, :delete]), class: 'button bg-red w-full'
 

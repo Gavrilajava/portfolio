@@ -38,7 +38,7 @@ en:
       new:
         header: Forgot your password?
         promt: Not a problem at all! We will send you an email with a link to reset it, provided you can recall the email address you used to register.
-        submit: Send me reset password instructions
+        submit: Send me a link
       no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
       send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
@@ -46,16 +46,21 @@ en:
       updated_not_active: "Your password has been changed successfully."
     registrations:
       new:
-        header: Edit your profile
-        promt: You can edit or even delete your account from here
+        header: Create your profile
+        promt: I need just a few details from you
         submit: Sign up
       edit:
         header: Edit your profile
-        promt: You can edit or even delete your account from here
+        promt: You can edit your details here
+        new_password:
+          label: New Password
+          promt: Leave blank if you don't want to change it
+        new_password_confirmation: Confirm New Password
+        current_password_promt: Type your current password to confirm that it is you.
         submit: Update
       delete:
         header: Cancel my account
-        promt: Unhappy? We can completely wipe your data. It may not be ideal from a marketing perspective, but it's fair.
+        promt: Unhappy? You can completely wipe your data out. It may not be ideal from a marketing perspective, but it's fair.
         submit: Delete my account
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."

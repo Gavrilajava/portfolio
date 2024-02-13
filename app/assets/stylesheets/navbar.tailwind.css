@@ -33,6 +33,13 @@
     @apply bg-blue
   }
 
+  #nav-mobile .navlink:nth-of-type(4):hover,
+  #nav-mobile .navlink.active:nth-of-type(4),
+  nav .start-4,
+  a:nth-child(4):hover~.nav-animation {
+    @apply bg-brown
+  }
+
   #nav-mobile-switch {
     @apply block sticky bg-brown w-24 h-24 cursor-pointer circle transition-all duration-500 z-10 -ml-12 -mt-24 sm:hidden 
   }
@@ -45,13 +52,17 @@
     @apply bg-none bg-brown !important
   }
 
-  #user-menu-button:hover ~ #navbar-user {
-    @apply animate-left items-center mt-2 border border-dark-grey rounded-lg bg-grey origin-right
+  #user-menu {
+    @apply  items-center mt-2 border border-dark-grey rounded-lg bg-grey invisible
+  }
+
+  #user-menu-container:hover > #user-menu, #user-menu-button:focus-within ~ #user-menu {
+    @apply animate-grow-left origin-right visible
   }
 
   @media screen(sm) {
-    #user-menu-button:hover ~ #navbar-user {
-      @apply animate-down origin-top !important
+    #user-menu-container:hover > #user-menu, #user-menu-button:focus-within ~ #user-menu {
+      @apply animate-grow-down origin-top !important
     }
   }
 
@@ -59,6 +70,7 @@
     @apply  flex items-center justify-center text-2xl font-thin bg-purple rounded-full ml-auto sm:mx-auto focus:ring-4 focus:ring-blue w-9 h-9
   }
 }
+
 
 #nav-mobile-switch:before {
   content: '\2630';
@@ -93,6 +105,11 @@ a:nth-child(3):hover~.nav-animation {
   left: 28rem;
 }
 
+nav .start-4,
+a:nth-child(4):hover~.nav-animation {
+  left: 37rem;
+}
+
 #nav-mobile .navlink:nth-of-type(2) {
   animation-delay: .1s;
 }
@@ -101,12 +118,8 @@ a:nth-child(3):hover~.nav-animation {
   animation-delay: .2s;
 }
 
-#user-menu-button:not(:focus-within) ~ #navbar-user {
-  visibility: hidden;
-}
-
-#navbar-user:hover, #user-menu-button:hover ~ #navbar-user {
-  visibility: visible !important;
+#nav-mobile .navlink:nth-of-type(4) {
+  animation-delay: .3s;
 }
 
 #nav-mobile-switch:checked ~ .page-body {
