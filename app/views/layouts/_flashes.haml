@@ -3,3 +3,7 @@
     .text-yellow.relative.w-full.rounded-lg.border.p-6.sm:p-8.bg-grey.border-dark-grey.animate-grow-down.origin-top
       =flash[:notice]
       %button.close{onclick: 'this.parentNode.remove()'}
+  -if flash[:error]
+    .text-red.relative.w-full.rounded-lg.border.p-6.sm:p-8.bg-grey.border-dark-grey.animate-grow-down.origin-top
+      =flash[:error]
+      %button.close{onclick: 'this.parentNode.remove()'}

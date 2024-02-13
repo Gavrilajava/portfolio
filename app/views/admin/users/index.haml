@@ -1,0 +1,25 @@
+.flex.flex-col.items-center.justify-center.px-6.py-8.mx-auto.lg:py-0
+
+  %h1.text-4xl.mt-5.text-green All Users
+
+  .flex.flex-row.justify-items-center
+    -if @offset > 0
+      =link_to 'Previous', @offset > @limit ? admin_users_offset_path(@offset - @limit) : admin_users_path, class: 'button flex bg-blue'
+    -if @count > @offset + @limit
+      =link_to 'Next', admin_users_offset_path(@offset + @limit), class: 'button flex bg-brown ms-8'
+
+  %table.table-auto.text-sm.text-left.text-light-blue.bg-grey.mt-8
+    %thead.text-purple.font-light.uppercase.bg-dark-grey
+      %th.px-6.py-3 #
+      %th.px-6.py-3 Name
+      %th.px-6.py-3 Email
+      %th.px-6.py-3 Role
+      %th.px-6.py-3 Created At
+    %tbody
+      -@objects.each do |user|
+        %tr.border-b.border-dark-grey
+          %td.px-6.py-3=user.id
+          %td.px-6.py-3=link_to user.name, edit_admin_user_path(user)
+          %td.px-6.py-3=user.email
+          %td.px-6.py-3=user.role
+          %td.px-6.py-3=user.created_at.to_s

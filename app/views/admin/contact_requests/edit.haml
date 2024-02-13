@@ -1,0 +1,18 @@
+.flex.flex-col.items-center.justify-center.px-6.py-8.mx-auto.lg:py-0
+  = form_for(@object, url: admin_contact_request_path(@object), html: { method: :patch, class: 'bordered sm:max-w-md'}) do |f|
+
+    %h1.text-3xl.text-green=I18n.t(:header, scope: [:devise, :registrations, :edit])
+
+    %h2=@object.email
+
+    %p=@object.message
+
+    = f.label :status, class: 'label block mb-2 mt-6'
+    =f.collection_select :status, ContactRequest.statuses.keys, :to_s, :titleize, {}, {class: 'input block w-full'}
+
+    = f.submit I18n.t(:submit, scope: [:devise, :registrations, :edit]), class: 'button bg-purple w-full'
+
+  = form_for(@object, url: admin_contact_request_path(@object), html: {method: :delete, class: 'bordered sm:max-w-md mt-8'}) do |f|
+    %h1.text-3xl.text-green.mt-3=I18n.t(:header, scope: [:devise, :registrations, :delete])
+    =f.submit I18n.t(:submit, scope: [:devise, :registrations, :delete]), class: 'button bg-red w-full'
+

@@ -47,7 +47,7 @@ en:
     registrations:
       new:
         header: Create your profile
-        promt: We need just a few details from you
+        promt: I need just a few details from you
         submit: Sign up
       edit:
         header: Edit your profile
@@ -56,7 +56,7 @@ en:
           label: New Password
           promt: Leave blank if you don't want to change it
         new_password_confirmation: Confirm New Password
-        current_password_promt: We need your current password to confirm that it is you.
+        current_password_promt: Type your current password to confirm that it is you.
         submit: Update
       delete:
         header: Cancel my account
