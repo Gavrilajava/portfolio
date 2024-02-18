@@ -2,7 +2,11 @@
   "dependencies": {
     "@babel/core": "^7.23.9",
     "@babel/plugin-transform-react-jsx": "^7.23.4",
-    "postcss-import": "^15.1.0"
+    "@babel/plugin-transform-typescript": "^7.23.6",
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
+    "postcss-import": "^15.1.0",
+    "react-dom": "^18.2.0"
   },
   "scripts": {
     "build:css": "tailwindcss --postcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css"
