@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'contacts', to: 'contact_requests#new'
   post 'contact_requests', to: 'contact_requests#create'
 
-  get 'groceries', to: 'groceries#index'
+  get 'urls', to: 'urls#index'
 
   namespace :admin do
     get 'users/offset/:offset', to: 'users#index', offset: /\d+/, as: 'users_offset'

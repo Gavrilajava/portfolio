@@ -5,6 +5,7 @@ ruby '3.1.4'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'devise'
+gem 'importmap-rails'
 gem 'pg', '~> 1.1'
 gem 'puma'
 gem 'rails'
