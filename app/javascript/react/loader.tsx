@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   interface Props {
     [key: string]: any;
-}
+  }
 
   const reactContainersNodelist = document.querySelectorAll('[data-behavior="react"]')
 
@@ -44,13 +44,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     Object.entries(reactContainers).forEach(([path, nodes]) => {
-      console.log(path)
       const Component = React.lazy(() => import(path))
 
       for (const node of nodes) {
-        debugger
         ReactDOM.render(App(Component, JSON.parse(node.dataset.props || "{}")), node)
-
       }
 
     })

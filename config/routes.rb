@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   post 'contact_requests', to: 'contact_requests#create'
 
   get 'urls', to: 'urls#index'
+  post 'urls', to: 'urls#create'
+  get '/s/:short', to: 'urls#show'
 
   namespace :admin do
     get 'users/offset/:offset', to: 'users#index', offset: /\d+/, as: 'users_offset'

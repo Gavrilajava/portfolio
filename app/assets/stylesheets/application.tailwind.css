@@ -29,3 +29,8 @@
   }
   
 }
+
+
+.spinner {
+  background-image: image-url("icons/spinner.svg");
+}

@@ -42,7 +42,7 @@ module Admin
     end
 
     def find_object
-      @object = object_class.find(params[:id])
+      @object = object_class.find(params[:id]) or raise('not found')
     end
 
     def default_order
