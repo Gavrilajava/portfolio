@@ -34,11 +34,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const App = (Component: React.FC<Props>, props: Props) => {
 
       return (
-        <div>
-          <React.Suspense fallback={<div>Loading...</div>}>
-            <Component {...props} />
-          </React.Suspense>
-        </div>
+        <React.Suspense fallback={<div>Loading...</div>}>
+          <Component {...props} />
+        </React.Suspense>
       )
 
     }

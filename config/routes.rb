@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'urls', to: 'urls#index'
   post 'urls', to: 'urls#create'
-  get '/s/:short', to: 'urls#show'
+  get '/s/(:short)', to: 'urls#show', as: 'url_redirect'
 
   namespace :admin do
     get 'users/offset/:offset', to: 'users#index', offset: /\d+/, as: 'users_offset'

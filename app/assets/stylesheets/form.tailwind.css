@@ -1,7 +1,7 @@
 
 
 form.bordered {
-  @apply w-full rounded-lg border sm:max-w-md p-6 sm:p-8 bg-grey border-dark-grey
+  @apply w-full rounded-lg border p-6 sm:p-8 bg-grey border-dark-grey
 }
 
 .label {

@@ -38,11 +38,11 @@ module Admin
     def authorize
       return if current_user.admin?
 
-      render 'layouts/unauthorized', status: :unauthorized
+      render 'layouts/errors/unauthorized', status: :unauthorized
     end
 
     def find_object
-      @object = object_class.find(params[:id]) or raise('not found')
+      @object = object_class.find(params[:id])
     end
 
     def default_order

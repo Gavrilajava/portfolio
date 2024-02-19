@@ -1,5 +1,14 @@
-.columns-1.px-5
+.flex.flex-col.items-center.justify-center.px-6.py-8.mx-auto.max-w-2xl
   %h1.text-4xl.mt-5.text-green URL Shortener
-  %p.mt-2.text-light-blue Every Developer Should Write a URL Shortener, and Here's the One Written by Me
+  %p.my-2.text-light-blue Every Developer Should Write a URL Shortener, and Here's the One Written by Me. What does stand out my shortener from the others? Lets see.
 
-%div{data: {behavior: :react, component: "react/urls/index", props: {url: urls_path}.to_json}}
+  %ul.text-dark-green.list-disc
+    %li It Uses MD5 hash of the original URL for a short link.
+    %li It Starts with the first five symbols of the hash.
+    %li If that's taken, it keeps adding more symbols until it finds a unique one.
+    %li="This all happens when you save a URL to the database, thanks to the #{link_to('trigger', 'https://github.com/Gavrilajava/portfolio/blob/url-shortener/db/triggers/add_unique_short_to_urls_on_insert.sql', class: 'text-light-blue')}."
+    %li If the URL's already there, no new record - just updates the timestamp.
+    %li It's simple, efficient, and scales well.
+    %li Frontend is written on Typescripted React
+
+.flex.flex-col.items-center.justify-center.px-6.py-8.mx-auto.lg:py-0{data: {behavior: :react, component: "react/urls/URLShortener", props: {url_redirect_path:, urls_path: }.to_json}}

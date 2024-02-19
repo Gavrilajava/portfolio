@@ -59,8 +59,8 @@ const useFetch = <T,>(
             dispatch({ type: 'SET_DATA', data: response });
           }
         })
-        .catch((errorMessage: string) => {
-          dispatch({ type: 'SET_ERROR', error: errorMessage });
+        .catch((error: Error) => {
+          dispatch({ type: 'SET_ERROR', error: error.message });
         });
     } else {
       dispatch({ type: 'SET_ERROR', error: 'No identity token found' });

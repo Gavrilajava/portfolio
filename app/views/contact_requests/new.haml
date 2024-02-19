@@ -3,8 +3,6 @@
 
     %h1.text-3xl.text-green=I18n.t(:header, scope: [:contact_requests])
     %p.text-light-blue=I18n.t(:promt, scope: [:contact_requests])
-    -if flash[:error]
-      %p.text-red=flash[:error]
 
     = f.label :email, class: 'label block mb-2 mt-6'
     = f.email_field :email, autofocus: true, required: true, autocomplete: 'email', class: 'input block w-full', placeholder: I18n.t(:placeholder, scope: [:contact_requests, :email])
