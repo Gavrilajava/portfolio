@@ -2,7 +2,7 @@ module ApplicationHelper
   def navbar_links
     links = {
       home: root_path,
-      groceries: groceries_path,
+      urls: urls_path,
       contacts: contacts_path
     }
     return links unless current_user&.admin?

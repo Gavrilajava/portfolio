@@ -4,7 +4,7 @@ module.exports = {
   content: [
     './public/*.html',
     './app/helpers/**/*.rb',
-    './app/javascript/**/*.js',
+    './app/javascript/**/*.{jsx,ts,tsx,js}',
     './app/views/**/*.{erb,haml,html,slim}'
   ],
   theme: {
@@ -22,6 +22,13 @@ module.exports = {
       'dark-green': '#608E4D',
       'light-blue': '#8AC7E8'
 
+    },
+    screens: {
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
     },
     extend: {
       fontFamily: {

@@ -1,4 +1,14 @@
 en:
+  navbar:
+    headers:
+      home: Home
+      urls: Shortener
+      contacts: Contacts
+      users: Users
+    toggle_nav_menu: Toggle navigation menu
+    open_user_menu: Open user menu
+    manage_profile: Manage Profile
+
   contact_requests:
     header: Send me a message!
     promt: If you have something to tell, here is a form for it!

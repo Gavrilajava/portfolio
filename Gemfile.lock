@@ -50,6 +50,11 @@ GEM
       erubi (~> 1.11)
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
+    active_model_serializers (0.10.14)
+      actionpack (>= 4.1)
+      activemodel (>= 4.1)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
     activejob (7.1.2)
       activesupport (= 7.1.2)
       globalid (>= 0.3.6)
@@ -80,6 +85,8 @@ GEM
     bcrypt (3.1.20)
     bigdecimal (3.1.5)
     builder (3.2.4)
+    case_transform (0.2)
+      activesupport
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
     crass (1.0.6)
@@ -123,11 +130,16 @@ GEM
       ruby_parser (~> 3.5)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
+    importmap-rails (2.0.1)
+      actionpack (>= 6.0.0)
+      activesupport (>= 6.0.0)
+      railties (>= 6.0.0)
     io-console (0.7.1)
     irb (1.11.0)
       rdoc
       reline (>= 0.3.8)
     json (2.7.1)
+    jsonapi-renderer (0.2.2)
     language_server-protocol (3.17.0.3)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -151,6 +163,7 @@ GEM
     net-smtp (0.4.0)
       net-protocol
     nio4r (2.7.0)
+    nodo (1.6.5)
     nokogiri (1.15.5-aarch64-linux)
       racc (~> 1.4)
     nokogiri (1.15.5-arm64-darwin)
@@ -292,12 +305,15 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  active_model_serializers
   debug
   devise
   factory_bot_rails
   faker
   haml-rails
   html2haml
+  importmap-rails
+  nodo
   pg (~> 1.1)
   puma
   rails

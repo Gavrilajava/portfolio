@@ -4,16 +4,16 @@
   .hidden.sm:flex.ml-6.space-x-4
     -current_index = navbar_links.keys.find_index(@active_nav_link) || 0
     -navbar_links.each_with_index do |(title, href), index|
-      =link_to title.to_s.upcase, href, class: 'navlink inline-block h-100'
+      =link_to I18n.t(title, scope: [:navbar, :headers]).upcase, href, class: 'navlink inline-block h-100'
       -content_for :mobile_nav do
-        =link_to title.to_s.upcase, href, class: "navlink block animate-slide -translate-x-full #{index == current_index ? 'active' : ''}"
+        =link_to I18n.t(title, scope: [:navbar, :headers]).upcase, href, class: "navlink block animate-slide -translate-x-full #{index == current_index ? 'active' : ''}"
     .nav-animation{class: "start-#{current_index + 1}"}
   #user-menu-container.absolute.top-2.right-5.text-sm.font-light
     -if current_user.blank?
-      =link_to 'Log In', new_user_session_path, class: 'block py-2 px-3 hover:text-blue', tabindex: 0
+      =link_to I18n.t(:submit, scope: [:devise, :sessions, :new]), new_user_session_path, class: 'block py-2 px-3 hover:text-blue', tabindex: 0
     -else
       %label.sr-only{for: 'user-menu-button'}
-        Open user menu
+        =I18n.t(:open_user_menu, scope: [:navbar])
       #user-menu-button{tabindex: 0}
         =current_user.name.first
       #user-menu
@@ -22,13 +22,13 @@
           %span.block=current_user.email
         %ul.block.w-full.font-medium.py-4.px-0.mt-2.mb-0.border-t.border-dark-grey.text-light-blue
           %li.hover:bg-dark-grey
-            =link_to 'Manage profile', edit_user_registration_path, class: 'block py-2 px-3 hover:text-blue', tabindex: 0
+            =link_to I18n.t(:manage_profile, scope: [:navbar]), edit_user_registration_path, class: 'block py-2 px-3 hover:text-blue', tabindex: 0
           %li.hover:bg-dark-grey
             =form_for current_user, url: destroy_user_session_path, method: :delete do |f|
-              =f.submit 'Log Out', class: 'block py-2 px-3 hover:text-blue', tabindex: 0
+              =f.submit I18n.t(:sign_out, scope: [:devise, :sessions]), class: 'block py-2 px-3 hover:text-blue', tabindex: 0
 
 %label.sr-only{for: 'nav-mobile-switch'}
-  Toggle navigation menu
+  =I18n.t(:toggle_nav_menu, scope: [:navbar])
 %input#nav-mobile-switch{type: :checkbox}
 
 

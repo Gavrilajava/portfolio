@@ -11,6 +11,12 @@ class ApplicationController < ActionController::Base
                                       keys: %i[name email password password_confirmation])
   end
 
+  def not_found
+    return render json: { error: :not_found }, status: :not_found if request.format.json?
+
+    render 'layouts/errors/not_found', status: :not_found
+  end
+
   def set_active_nav_link
     @active_nav_link = :home
   end
