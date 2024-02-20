@@ -47,7 +47,7 @@ export default function URLShortener({ urls_path, url_redirect_path }: URLShorte
       <label className="label block mb-2 mt-6" htmlFor="long">Long Url</label>
       <div className="w-full flex relative">
         <span className="bg-blue input rounded-r-none pe-1">https://</span>
-        <input type="text" name="long" id="long" value={data?.long} onChange={handleChange} className="flex-grow input rounded-l-none ps-1" placeholder="www.gavrilchik.net" />
+        <input type="text" name="long" id="long" value={data?.long} onChange={handleChange} className="flex-grow w-full input rounded-l-none ps-1" placeholder="www.gavrilchik.net" />
         {loading && <Spinner />}
       </div>
       {error && <span className="text-red text-sm">{error}</span>}
@@ -56,7 +56,7 @@ export default function URLShortener({ urls_path, url_redirect_path }: URLShorte
       </button>
       <label className="label block mb-2 mt-4" htmlFor="short">Short Url</label>
       <div className="w-full flex">
-        <input type="text" name="short" id="short" value={shortUrl()} className={`flex-grow input ${data?.short ? 'rounded-r-none' : ""}`} placeholder="Shotren url will appear here" />
+        <input type="text" name="short" id="short" value={shortUrl()} className={`flex-grow w-full input ${data?.short ? 'rounded-r-none' : ""}`} placeholder="Shotren url will appear here" />
         {data?.short && 
         <span className="bg-green input cursor-pointer rounded-l-none" onClick={copyUrl}>
           {data?.copied ? <CheckIcon/> : <CopyIcon/> }
