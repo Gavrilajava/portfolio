@@ -33,8 +33,8 @@ class Url < ApplicationRecord
 
   def long_is_a_valid_url
     uri = URI.parse(long)
-    uri.is_a?(URI::HTTPS) && uri.host.present?
-  rescue URI::InvalidURIError
-    errors.add(:long, 'Should be a valid URL')
+    uri.is_a?(URI::HTTPS) && uri.host.present? || raise
+  rescue StandardError
+    errors.add(:long, 'Should be a valid and secure URL')
   end
 end
