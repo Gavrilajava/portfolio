@@ -11,7 +11,8 @@ class UrlsController < ApplicationController
   end
 
   def show
-    url = Url.find_by(short: params[:short].downcase)
+    url = Url.find_by!(short: params[:short].downcase)
+
     redirect_to "https://#{url.long}", allow_other_host: true
   end
 

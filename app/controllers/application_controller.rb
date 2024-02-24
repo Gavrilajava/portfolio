@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_active_nav_link
 

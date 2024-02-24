@@ -24,21 +24,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     const ReactDOM = await import('react-dom')
 
     const reactContainers = Array.from(reactContainersNodelist).reduce((result: ComponentNodeCollection, el: ComponentNode) => {
-
       result[el.dataset.component] ||= []
       result[el.dataset.component].push(el)
       return result
-
     }, {})
 
     const App = (Component: React.FC<Props>, props: Props) => {
-
       return (
         <React.Suspense fallback={<div>Loading...</div>}>
           <Component {...props} />
         </React.Suspense>
       )
-
     }
 
     Object.entries(reactContainers).forEach(([path, nodes]) => {
