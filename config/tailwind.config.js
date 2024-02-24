@@ -35,7 +35,8 @@ module.exports = {
         sans: ['Poppins', ...defaultTheme.fontFamily.sans],
       },
       backgroundImage: {
-        close: "url('icons/close.svg')"
+        close: "url('icons/close.svg')",
+        sharp: "url('icons/sharp.svg')"
       },
       keyframes: {
         slide: {
