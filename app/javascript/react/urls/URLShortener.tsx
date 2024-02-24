@@ -22,7 +22,11 @@ export default function URLShortener({ urls_path, url_redirect_path }: URLShorte
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (loading) return
-    callFetch({long: data?.long})
+    if (data?.long) {
+      callFetch({ long: `https://${data.long}` })
+    } else {
+      dispatch({ type: 'SET_ERROR', error: 'Please enter url.' })
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -47,7 +51,7 @@ export default function URLShortener({ urls_path, url_redirect_path }: URLShorte
       <label className="label block mb-2 mt-6" htmlFor="long">Long Url</label>
       <div className="w-full flex relative">
         <span className="bg-blue input rounded-r-none pe-1">https://</span>
-        <input type="text" name="long" id="long" value={data?.long} onChange={handleChange} className="flex-grow w-full input rounded-l-none ps-1" placeholder="www.gavrilchik.net" />
+        <input type="text" name="long" id="long" value={data?.long?.replace(/^https?:\/\//, '')} onChange={handleChange} className="flex-grow w-full input rounded-l-none ps-1" placeholder="www.gavrilchik.net" />
         {loading && <Spinner />}
       </div>
       {error && <span className="text-red text-sm">{error}</span>}
@@ -57,9 +61,9 @@ export default function URLShortener({ urls_path, url_redirect_path }: URLShorte
       <label className="label block mb-2 mt-4" htmlFor="short">Short Url</label>
       <div className="w-full flex">
         <input type="text" name="short" id="short" value={shortUrl()} className={`flex-grow w-full input ${data?.short ? 'rounded-r-none' : ""}`} placeholder="Shot url will appear here" />
-        {data?.short && 
-        <span className="bg-green input cursor-pointer rounded-l-none" onClick={copyUrl}>
-          {data?.copied ? <CheckIcon/> : <CopyIcon/> }
+        {data?.short &&
+          <span className="bg-green input cursor-pointer rounded-l-none" onClick={copyUrl}>
+            {data?.copied ? <CheckIcon /> : <CopyIcon />}
           </span>}
       </div>
     </form>
