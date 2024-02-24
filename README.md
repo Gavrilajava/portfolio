@@ -10,7 +10,7 @@ Check out the responsive navbar [here](app/views/layouts/_navbar.haml) and [here
 
 ## TypeScript + React in a Rails Frontend
 
-See the integration of TypeScript and React into the Rails frontend [here](config/initializers/sprockets_rails.rb) [here](app/javascript/react/loader.tsx) and [here](app/javascript/react/urls/URLShortener.tsx). I've also written an article about this approach [here]. This method is is a very promising way to have reactive components and classic server side rendered pages in the same app (Yes, Rails has SSR since 2004!)
+See the integration of TypeScript and React into the Rails frontend [here](config/initializers/sprockets_rails.rb) [here](app/javascript/react/loader.tsx) and [here](app/javascript/react/urls/URLShortener.tsx). I've also written an article about this approach [here](https://dev.to/gavrilarails/ruby-on-rails-with-react-on-typescript-using-importmaps-5082). This method is is a very promising way to have reactive components and classic server side rendered pages in the same app (Yes, Rails has SSR since 2004!)
 
 ## SQL Triggers in Rails
 
