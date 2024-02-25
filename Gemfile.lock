@@ -85,6 +85,11 @@ GEM
     bcrypt (3.1.20)
     bigdecimal (3.1.5)
     builder (3.2.4)
+    bundle-audit (0.1.0)
+      bundler-audit
+    bundler-audit (0.9.1)
+      bundler (>= 1.2.0, < 3)
+      thor (~> 1.0)
     case_transform (0.2)
       activesupport
     code_analyzer (0.5.5)
@@ -321,6 +326,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  bundle-audit
   debug
   devise
   factory_bot_rails
