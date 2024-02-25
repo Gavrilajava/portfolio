@@ -12,7 +12,7 @@ class TSXCompiler < Nodo::Core
     (source, filename) => {
       nodo.debug(`Compiling component ${filename}`);
 
-      const result = babelCore.transformSync(source, optionsObject)
+      const result = babelCore.transformSync(source, optionsObject({}))
 
       return result.code;
     }

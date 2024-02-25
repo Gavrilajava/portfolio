@@ -112,6 +112,7 @@ GEM
       ruby2_keywords
     erubi (1.12.0)
     erubis (2.7.0)
+    execjs (2.9.1)
     factory_bot (6.4.6)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.4.3)
@@ -304,6 +305,8 @@ GEM
     tailwindcss-rails (2.1.0-x86_64-linux)
       railties (>= 6.0.0)
     temple (0.10.3)
+    terser (1.2.0)
+      execjs (>= 0.3.0, < 3)
     thor (1.3.0)
     tilt (2.3.0)
     timeout (0.4.1)
@@ -344,6 +347,7 @@ DEPENDENCIES
   rubocop
   sprockets-rails
   tailwindcss-rails (~> 2.1)
+  terser
   tzinfo-data
 
 RUBY VERSION
