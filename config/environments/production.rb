@@ -28,8 +28,8 @@ Rails.application.configure do
     'Expires' => 1.year.from_now.to_formatted_s(:rfc822)
   }
 
-  # Compress CSS using a preprocessor.
-  # config.assets.css_compressor = :sass
+  # Compress  JS
+  config.assets.js_compressor = :terser
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
