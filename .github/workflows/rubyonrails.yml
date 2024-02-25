@@ -43,8 +43,10 @@ jobs:
         run: yarn install
       - name: Precompile assets
         run: bin/rails assets:precompile
-      - name: Run rails tests
+      - name: Run rspec
         run: bundle exec rspec
+      - name: Run yest
+        run: yarn test
 
   lint:
     runs-on: ubuntu-latest
@@ -61,4 +63,4 @@ jobs:
       # - name: Security audit application code
       #   run: bin/brakeman -q -w2
       - name: Lint Ruby files
-        run: bin/rubocop --parallel
+        run: rubocop --parallel
