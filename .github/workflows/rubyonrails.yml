@@ -29,12 +29,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      # Add or replace dependency steps here
       - name: Install Ruby and gems
         uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
         with:
           bundler-cache: true
       # Add or replace database setup steps here
+      - name: Copy credentials
+        run: echo $RAILS_TEST_KEY > config/credentials/test.key
       - name: Set up database schema
         run: bin/rails db:schema:load
       # Add or replace test runners here
