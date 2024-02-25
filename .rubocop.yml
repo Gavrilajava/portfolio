@@ -12,6 +12,7 @@ Metrics/BlockLength:
   Exclude:
     - "config/**/*"
     - "spec/**/*"
+    - db/schema.rb
 
 AllCops:
   Exclude:

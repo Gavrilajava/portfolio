@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import useFetch from "react/hooks/useFetch";
-import Spinner from "react/shared/Spinner";
-import CopyIcon from "react/shared/icons/CopyIcon";
-import CheckIcon from "react/shared/icons/CheckIcon";
+import React from "react";
+import useFetch from "@app/hooks/useFetch";
+import Spinner from "@app/shared/Spinner";
+import CopyIcon from "@app/shared/icons/CopyIcon";
+import CheckIcon from "@app/shared/icons/CheckIcon";
 
 interface URLData {
   long?: string;
@@ -47,7 +47,7 @@ export default function URLShortener({ urls_path, url_redirect_path }: URLShorte
   }
 
   return (
-    <form className="bordered max-w-2xl md:min-w-2xl" id="url_form" onSubmit={handleSubmit}>
+    <form className="bordered max-w-2xl md:min-w-2xl" id="url_form" role="form" onSubmit={handleSubmit}>
       <label className="label block mb-2 mt-6" htmlFor="long">Long Url</label>
       <div className="w-full flex relative">
         <span className="bg-blue input rounded-r-none pe-1">https://</span>
@@ -60,7 +60,7 @@ export default function URLShortener({ urls_path, url_redirect_path }: URLShorte
       </button>
       <label className="label block mb-2 mt-4" htmlFor="short">Short Url</label>
       <div className="w-full flex">
-        <input type="text" name="short" id="short" value={shortUrl()} className={`flex-grow w-full input ${data?.short ? 'rounded-r-none' : ""}`} placeholder="Shot url will appear here" />
+        <input type="text" name="short" id="short" value={shortUrl()} readOnly={true} className={`flex-grow w-full input ${data?.short ? 'rounded-r-none' : ""}`} placeholder="Shot url will appear here" />
         {data?.short &&
           <span className="bg-green input cursor-pointer rounded-l-none" onClick={copyUrl}>
             {data?.copied ? <CheckIcon /> : <CopyIcon />}

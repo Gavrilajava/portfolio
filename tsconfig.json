@@ -1,16 +1,24 @@
 {
   "compilerOptions": {
-      "module": "system",
-      "noImplicitAny": true,
-      "removeComments": true,
-      "preserveConstEnums": true,
-      "strictNullChecks": true,
-      "jsx": "react",
-      "target": "ES2017"
+    "module": "system",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "jsx": "react",
+    "target": "ES2017",
+    "baseUrl": "./app",
+    "paths": {
+      "@app/*": ["./javascript/react/*"],
+      "@hooks/*": ["./javascript/react/hooks/*"],
+      "@shared/*": ["./javascript/react/shared/*"]
+    }
   },
   "include": [
-      "app/javascript/**/*" , "app/vendor/javascript/**/*" ],
+    "app/javascript/**/*",
+    "app/vendor/javascript/**/*"
+  ],
   "exclude": [
-      "node_modules",
+    "node_modules"
   ]
 }

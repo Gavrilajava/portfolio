@@ -11,7 +11,7 @@ Dir['app/javascript/react/**/*'].each do |path|
   next unless path.include?('.')
 
   path = path.sub('app/javascript/', '')
-  key = path.sub(/(\.jsx|\.tsx|\.ts)/, '')
+  key = "@app/#{path.sub('react/', '').sub(/(\.jsx|\.tsx|\.ts)/, '')}"
   source = path.sub(/(\.jsx|\.tsx|\.ts)/, '.js')
   pin key, to: source, preload: false
 end

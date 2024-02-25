@@ -1,9 +1,10 @@
-class TSXCompiler < Nodo::Core
+class Compiler < Nodo::Core
   require babelCore: '@babel/core',
           optionsObject: './babel.config.js'
 
   class_function def call(input)
     filename = File.basename(input[:filename])
+    debugger
     source = input[:data]
     { data: compile_component(source, filename) }
   end
@@ -18,6 +19,3 @@ class TSXCompiler < Nodo::Core
     }
   JS
 end
-
-Sprockets.register_mime_type 'text/tsx', extensions: %w[.tsx .ts], charset: :unicode
-Sprockets.register_transformer 'text/tsx', 'application/javascript', TSXCompiler
