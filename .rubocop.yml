@@ -1,10 +1,12 @@
+
+
 Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/Documentation:
   Enabled: false
 
-Metrics/Metrics/MethodLength:
+Metrics/MethodLength:
   Exclude:
     - "db/migrate/*"
 
@@ -12,7 +14,9 @@ Metrics/BlockLength:
   Exclude:
     - "config/**/*"
     - "spec/**/*"
+    - db/schema.rb
 
 AllCops:
   Exclude:
     - "bin/*"
+    - vendor/**/*

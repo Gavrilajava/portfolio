@@ -85,8 +85,15 @@ GEM
     bcrypt (3.1.20)
     bigdecimal (3.1.5)
     builder (3.2.4)
+    bundle-audit (0.1.0)
+      bundler-audit
+    bundler-audit (0.9.1)
+      bundler (>= 1.2.0, < 3)
+      thor (~> 1.0)
     case_transform (0.2)
       activesupport
+    code_analyzer (0.5.5)
+      sexp_processor
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
     crass (1.0.6)
@@ -205,6 +212,10 @@ GEM
       activesupport (= 7.1.2)
       bundler (>= 1.15.0)
       railties (= 7.1.2)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.2.0)
       activesupport (>= 5.0.0)
       minitest
@@ -212,6 +223,14 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
+    rails_best_practices (1.23.2)
+      activesupport
+      code_analyzer (~> 0.5.5)
+      erubis
+      i18n
+      json
+      require_all (~> 3.0)
+      ruby-progressbar
     railties (7.1.2)
       actionpack (= 7.1.2)
       activesupport (= 7.1.2)
@@ -227,6 +246,7 @@ GEM
     regexp_parser (2.9.0)
     reline (0.4.1)
       io-console (~> 0.5)
+    require_all (3.0.0)
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
@@ -306,6 +326,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  bundle-audit
   debug
   devise
   factory_bot_rails
@@ -317,6 +338,8 @@ DEPENDENCIES
   pg (~> 1.1)
   puma
   rails
+  rails-controller-testing
+  rails_best_practices
   rspec-rails
   rubocop
   sprockets-rails

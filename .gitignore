@@ -38,3 +38,5 @@ docker/local_prod
 /config/credentials/*.key
 
 /config/credentials/development.key
+
+/config/credentials/test.key

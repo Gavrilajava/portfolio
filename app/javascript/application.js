@@ -1,1 +1,1 @@
-import 'react/loader'
+import '@app/loader'

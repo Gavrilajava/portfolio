@@ -14,13 +14,15 @@ gem 'rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
+  gem 'bundle-audit'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'html2haml'
+  gem 'rails_best_practices'
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'rubocop'
-
-  gem 'html2haml'
 end
 
 group :development do

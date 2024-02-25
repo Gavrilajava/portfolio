@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     Object.entries(reactContainers).forEach(([path, nodes]) => {
-      const Component = React.lazy(() => import(path))
+      const Component = React.lazy(() => import(path.replace(/^react/, '@app')))
 
       for (const node of nodes) {
         ReactDOM.render(App(Component, JSON.parse(node.dataset.props || "{}")), node)
