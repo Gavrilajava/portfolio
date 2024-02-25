@@ -19,4 +19,4 @@ Metrics/BlockLength:
 AllCops:
   Exclude:
     - "bin/*"
-    - vendor/**/*.rbgit add
+    - vendor/**/*.rb
