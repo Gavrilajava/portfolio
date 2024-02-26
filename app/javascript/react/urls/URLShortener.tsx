@@ -23,7 +23,7 @@ export default function URLShortener({ urls_path, url_redirect_path }: URLShorte
     e.preventDefault()
     if (loading) return
     if (data?.long) {
-      callFetch({ long: `https://${data.long}` })
+      callFetch({ long: `https://${data.long.replace(/^https?:\/\//, '')}` })
     } else {
       dispatch({ type: 'SET_ERROR', error: 'Please enter url.' })
     }

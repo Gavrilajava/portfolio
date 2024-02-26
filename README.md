@@ -18,10 +18,9 @@ Discover the integration of SQL triggers in Rails [here](db/triggers/add_unique_
 
 ## More to come...
 
----
-
 Dive into the code, explore, and perhaps find some inspiration for your own voyages. If you have any questions or wish to discuss any of these features, don't hesitate to reach me.
 
+### Badges:
 
 [![CI](https://github.com/Gavrilajava/portfolio/actions/workflows/rubyonrails.yml/badge.svg)](https://github.com/Gavrilajava/portfolio/actions/workflows/rubyonrails.yml)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-community-brightgreen.svg)](https://rubystyle.guide)
