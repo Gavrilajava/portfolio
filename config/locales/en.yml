@@ -18,4 +18,8 @@ en:
       placeholder: Type your message here...
     email:
       placeholder: Your email
+    admin:
+      header: Send me a message!
+      submit: Update
+      promt: Delete 
 
