@@ -35,7 +35,7 @@ Rails.application.configure do
   config.assets.compile = false
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  config.asset_host = 'https://cdn.gavrilchik.net'
+  # config.asset_host = 'https://cdn.gavrilchik.net'
 
   # Action mailer settings
   config.action_mailer.default_url_options = Rails.application.credentials.action_mailer.default_url_options
