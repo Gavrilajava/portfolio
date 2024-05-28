@@ -1,9 +1,9 @@
-version: 0.2 
+version: 0.2
 
-phases: 
+phases:
   install:
     runtime-versions:
-        ruby: latest
+      ruby: 3.2.0
     commands:
       - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2&
       - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
@@ -22,8 +22,8 @@ phases:
       - mkdir shared/pids
       - mkdir shared/sockets
 
-  build: 
-    commands: 
+  build:
+    commands:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t $REPO_URL:latest . --build-arg RAILS_ENV=$RAILS_ENV --build-arg ENVIRONMENT_KEY=$ENVIRONMENT_KEY
@@ -37,4 +37,4 @@ phases:
       - echo Writing image definitions file...
       - printf '[{"name":"rails","imageUri":"%s"}]' $REPO_URL:$IMAGE_TAG > imagedefinitions.json
 artifacts:
-    files: imagedefinitions.json
+  files: imagedefinitions.json
