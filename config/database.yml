@@ -82,7 +82,7 @@ test:
 #
 production:
   <<: *default
-  host: <%= ENV['POSTGRESQL_HOST'] %>
-  username: <%= ENV['POSTGRESQL_USER_NAME'] %>
-  password: <%= ENV['POSTGRESQL_PASSWORD'] %>
-  database: <%= ENV['POSTGRESQL_DB'] %>
+  url: <%= ENV['SCHEMATOGO_URL'] %>
+  # username: <%= ENV['POSTGRESQL_USER_NAME'] %>
+  # password: <%= ENV['POSTGRESQL_PASSWORD'] %>
+  # database: <%= ENV['POSTGRESQL_DB'] %>
