@@ -39,3 +39,4 @@ docker/local_prod
 
 
 /coveragejs
+.byebug_history
