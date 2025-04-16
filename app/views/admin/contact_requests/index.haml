@@ -4,9 +4,9 @@
 
   .flex.flex-row.justify-items-center
     -if @offset > 0
-      =link_to 'Previous', @offset > @limit ? admin_contact_requests_offset_path(@offset - @limit) : admin_contacts_requests_path, class: 'button flex bg-blue'
+      =link_to 'Previous', @offset > @limit ? admin_contacts_requests_offset_path(@offset - @limit) : admin_contact_requests_path, class: 'button flex bg-blue'
     -if @count > @offset + @limit
-      =link_to 'Next', admin_contact_requests_offset_path(@offset + @limit), class: 'button flex bg-brown ms-8'
+      =link_to 'Next', admin_contacts_requests_offset_path(@offset + @limit), class: 'button flex bg-brown ms-8'
 
   %table.table-auto.text-sm.text-left.text-light-blue.bg-grey.mt-8
     %thead.text-purple.font-light.uppercase.bg-dark-grey
